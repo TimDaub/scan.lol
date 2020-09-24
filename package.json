@@ -1,0 +1,32 @@
+{
+  "name": "scan.lol",
+  "version": "0.0.1",
+  "description": "A website to quickly scan a qr code without installing an app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "python3 -m http.server --directory src"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/TimDaub/scan.lol.git"
+  },
+  "keywords": [
+    "qr",
+    "qr",
+    "code",
+    "quick",
+    "response",
+    "scan",
+    "website"
+  ],
+  "author": "Tim Daubenschütz <tim@daubenschuetz.de> (https://timdaub.github.io)",
+  "license": "GPL-3.0-only",
+  "bugs": {
+    "url": "https://github.com/TimDaub/scan.lol/issues"
+  },
+  "homepage": "https://github.com/TimDaub/scan.lol#readme",
+  "dependencies": {
+    "qr-scanner": "1.2.0"
+  }
+}

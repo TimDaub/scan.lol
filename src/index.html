@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8"/>
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>scan.lol</title>
+		<style>
+			body {
+				margin:0;
+				padding: 0;
+				overflow: hidden;
+			}
+			video {
+				position: fixed;
+				top: 0;
+				left: 0;
+				height: 100%;
+				z-index: 1;
+			}
+
+			footer {
+				position: fixed;
+				bottom: 0;
+				left: 0;
+				width: 100%;
+				background-color: black;
+				height: 20px;
+				margin-top: -50px;
+				z-index: 2;
+				color: white;
+				padding: 1em;
+			}
+		</style>
+
+  </head>
+  <body>
+    <video autoplay="true"></video>
+		<footer>
+			Made by
+				<a href="https://timdaub.github.io" target="_blank">
+					Tim Daubenschütz
+				</a>
+		</footer>
+    
+		<script src="./qr-scanner.umd.min.js"></script>
+		<script src="./qr-scanner-worker.min.js"></script>
+    <script>
+      const videoElem = document.querySelector("video");
+
+      if (navigator.mediaDevices.getUserMedia) {
+        navigator.mediaDevices.getUserMedia({ video: true })
+          .then(function (stream) {
+            videoElem.srcObject = stream;
+          })
+          .catch(function (error) {
+						console.log(error);
+          });
+
+				const scanner = new QrScanner(videoElem, msg => {
+					let choice;
+					if (msg.includes("http") || msg.includes("https")) {
+						const choice = confirm(`Redirect to: ${msg}`);
+						if (choice) window.location.href = msg;
+					} else {
+						alert(msg);
+					}
+				});
+				scanner.start();
+      }
+
+    </script>
+		<script async defer data-domain="scan.lol" src="https://plausible.io/js/plausible.js"></script>
+  </body>
+</html>
