@@ -60,7 +60,10 @@
 					let choice;
 					if (msg.includes("http") || msg.includes("https")) {
 						const choice = confirm(`Redirect to: ${msg}`);
-						if (choice) window.location.href = msg;
+						if (choice) {
+              scanner.stop();
+              window.location.href = msg;
+            }
 					} else {
 						alert(msg);
 					}
