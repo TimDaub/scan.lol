@@ -2,6 +2,9 @@
 
 > A website to quickly scan a qr code without installing an app
 
+- [app](https://scan.lol)
+- [stats](https://plausible.io/scan.lol)
+
 ## Motivation
 
 Don't you hate it that when you have to quickly scan a QR (QUICK RESPONSE) code but first you have to:
