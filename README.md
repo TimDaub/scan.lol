@@ -3,7 +3,6 @@
 > A website to quickly scan a qr code without installing an app
 
 - [app](https://scan.lol)
-- [stats](https://plausible.io/scan.lol)
 
 ## Motivation
 
